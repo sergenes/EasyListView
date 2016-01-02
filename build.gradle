@@ -20,13 +20,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url 'https://dl.bintray.com/sergenes/maven/'
-        }
+//        mavenCentral()
+        mavenLocal()
+//        maven {
+//            url 'https://dl.bintray.com/sergenes/maven/'
+//        }
     }
 }
-
-
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}
