@@ -13,10 +13,18 @@ dependencies {
 ```
 
 ## Demo
-To understand how use this library please look at <a href='https://github.com/sergenes/EasyListView/tree/master/app/src/main/java/org/nes/easylistviewdemo' target='_blank'>demo project</a>.
+To understand how to use this library please look at <a href='https://github.com/sergenes/EasyListView/tree/master/app/src/main/java/org/nes/easylistviewdemo' target='_blank'>demo project</a>.
 
 ## Sample
-
+1. Define in layout
+```xml
+    <org.nes.easylistview.EasyListView
+            android:id="@+id/staticTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </org.nes.easylistview.EasyListView>
+```
+2. Get and populate in java
 ```java
         final EasyListView table = (EasyListView) findViewById(R.id.staticTable);
 
