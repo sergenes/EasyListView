@@ -19,7 +19,7 @@ If you are using this lib, let me know contacting me at serge.nes@gmail.com
 License
 =================================
 
-    Copyright 2014 Leonardo Cardoso
+    Copyright 2014 Sergey Nes
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
