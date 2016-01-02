@@ -16,7 +16,7 @@ dependencies {
 To understand how to use this library please look at <a href='https://github.com/sergenes/EasyListView/tree/master/app/src/main/java/org/nes/easylistviewdemo' target='_blank'>demo project</a>.
 
 ## Sample
-1. Define in layout
+Define listview in layout
 ```xml
     <org.nes.easylistview.EasyListView
             android:id="@+id/staticTable"
@@ -24,7 +24,99 @@ To understand how to use this library please look at <a href='https://github.com
             android:layout_height="match_parent">
     </org.nes.easylistview.EasyListView>
 ```
-2. Get and populate in java
+Define layouts for your rows
+```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:padding="5dp"
+                  android:descendantFocusability="blocksDescendants"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <CheckBox
+                android:id="@+id/checkCheckBox"
+                android:gravity="center_vertical"
+                android:clickable="false"
+                android:layout_width="wrap_content" android:layout_height="match_parent"/>
+        <TextView
+                android:id="@+id/titleTextView"
+                android:gravity="center_vertical"
+                android:text="test"
+                android:layout_width="match_parent" android:layout_height="50dp"/>
+
+    </LinearLayout>
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <TextView
+                android:id="@+id/titleTextView"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+    </LinearLayout>
+```
+Implement the row holder
+```java
+public class CheckableRowItem implements EasyListView.RowHolder{
+    TextView titleTextView;
+    CheckBox checkCheckBox;
+
+    LayoutInflater layoutInflater;
+    int layout;
+
+    String title;
+    boolean checked;
+
+    public CheckableRowItem(Context context, int layout) {
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.layout = layout;
+
+    }
+
+    public CheckableRowItem setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public CheckableRowItem setChecked(boolean checked) {
+        this.checked = checked;
+        return this;
+    }
+
+    @Override
+    public View inflate(ViewGroup parent) {
+        View convertView = layoutInflater.inflate(layout, parent, false);
+        titleTextView = (TextView) convertView.findViewById(R.id.titleTextView);
+        checkCheckBox = (CheckBox) convertView.findViewById(R.id.checkCheckBox);
+        return convertView;
+    }
+
+    @Override
+    public void update() {
+        titleTextView.setText(title);
+        checkCheckBox.setChecked(checked);
+    }
+
+    @Override
+    public void onClick() {
+        checked = !checked;
+        update();
+
+    }
+
+    @Override
+    public void setDefaultValues() {
+        checked = false;
+        update();
+    }
+}
+```
+
+Get and populate in java
 ```java
         final EasyListView table = (EasyListView) findViewById(R.id.staticTable);
 
