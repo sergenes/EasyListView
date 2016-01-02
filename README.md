@@ -1,7 +1,7 @@
 [ ![Download](https://api.bintray.com/packages/sergenes/maven/easylistview/images/download.svg) ](https://bintray.com/sergenes/maven/easylistview/_latestVersion)
 
 # EasyListView
-With EasyListView you don't have to implement your own Adapter, every time, when you need to show a simple list.
+With EasyListView you don't have to implement your own Adapter every time, when you need to show a simple list.
 
 
 ## How to use with Gradle
@@ -11,6 +11,10 @@ dependencies {
 	compile 'org.nes.easylistview:easylistview:1.0.0'
 }
 ```
+
+## Demo
+To understand how use this library please look at <a href='https://github.com/sergenes/EasyListView/tree/master/app/src/main/java/org/nes/easylistviewdemo' target='_blank'>demo project</a>.
+
 ## Sample
 
 ```java
