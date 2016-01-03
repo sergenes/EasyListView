@@ -8,18 +8,18 @@ import org.nes.easylistview.EasyListView;
 import org.nes.easylistviewdemo.R;
 
 /**
- * Created by sergenes on 1/2/16.
+ * Created by sergenes on 1/3/16.
  */
-public class SimpleRowItem extends EasyListView.BaseEasyRow {
+public class HeaderRowItem extends EasyListView.BaseEasyHeader {
     TextView titleTextView;
 
     String title;
 
-    public SimpleRowItem(Context context, int layout) {
+    public HeaderRowItem(Context context, int layout) {
         super(context, layout);
     }
 
-    public SimpleRowItem setTitle(String title) {
+    public HeaderRowItem setTitle(String title) {
         this.title = title;
         return this;
     }
@@ -30,7 +30,6 @@ public class SimpleRowItem extends EasyListView.BaseEasyRow {
         titleTextView = (TextView) convertView.findViewById(R.id.titleTextView);
         return convertView;
     }
-
 
     @Override
     public void update() {

@@ -12,19 +12,17 @@ import org.nes.easylistviewdemo.R;
 /**
  * Created by sergenes on 1/2/16.
  */
-public class CheckableRowItem implements EasyListView.RowHolder{
+public class CheckableRowItem extends EasyListView.BaseEasyRow {
     TextView titleTextView;
+
     CheckBox checkCheckBox;
 
-    LayoutInflater layoutInflater;
-    int layout;
-
     String title;
+
     boolean checked;
 
     public CheckableRowItem(Context context, int layout) {
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.layout = layout;
+        super(context, layout);
 
     }
 
@@ -33,6 +31,11 @@ public class CheckableRowItem implements EasyListView.RowHolder{
         return this;
     }
 
+//    public CheckableRowItem setTag(int tag) {
+//        super.setTag(tag);
+//        return this;
+//    }
+
     public CheckableRowItem setChecked(boolean checked) {
         this.checked = checked;
         return this;
@@ -40,7 +43,7 @@ public class CheckableRowItem implements EasyListView.RowHolder{
 
     @Override
     public View inflate(ViewGroup parent) {
-        View convertView = layoutInflater.inflate(layout, parent, false);
+        View convertView = getInflatedView(parent);
         titleTextView = (TextView) convertView.findViewById(R.id.titleTextView);
         checkCheckBox = (CheckBox) convertView.findViewById(R.id.checkCheckBox);
         return convertView;
