@@ -31,11 +31,6 @@ public class CheckableRowItem extends EasyListView.BaseEasyRow {
         return this;
     }
 
-//    public CheckableRowItem setTag(int tag) {
-//        super.setTag(tag);
-//        return this;
-//    }
-
     public CheckableRowItem setChecked(boolean checked) {
         this.checked = checked;
         return this;
