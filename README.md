@@ -8,7 +8,7 @@ With EasyListView you don't have to implement your own Adapter every time, when 
 You can use the artifacts like this:
 ```groovy
 dependencies {
-	compile 'org.nes.easylistview:easylistview:1.0.1'
+	compile 'org.nes.easylistview:easylistview:1.0.2'
 }
 ```
 
