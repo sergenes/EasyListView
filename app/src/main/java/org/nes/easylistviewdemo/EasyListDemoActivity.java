@@ -44,19 +44,19 @@ public class EasyListDemoActivity extends AppCompatActivity {
         item7.setTitle("Summer").setChecked(false).setTag(2);
 
 
-        table.getRowSource().add(item1);
-        table.getRowSource().add(item2);
+        table.addRow(item1);
+        table.addRow(item2);
 
-        table.getRowSource().add(header1);
+        table.addRow(header1);
 
-        table.getRowSource().add(item3);
-        table.getRowSource().add(item4);
-        table.getRowSource().add(item5);
+        table.addRow(item3);
+        table.addRow(item4);
+        table.addRow(item5);
 
-        table.getRowSource().add(header2);
+        table.addRow(header2);
 
-        table.getRowSource().add(item6);
-        table.getRowSource().add(item7);
+        table.addRow(item6);
+        table.addRow(item7);
 
         table.reloadData();
 

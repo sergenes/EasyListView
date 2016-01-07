@@ -21,6 +21,10 @@ public class EasyListView extends ListView {
         return rowSource;
     }
 
+    public void addRow(RowHolder row){
+        rowSource.add(row);
+    }
+
     public EasyListView(Context context) {
         super(context);
         init();

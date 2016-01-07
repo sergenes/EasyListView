@@ -12,7 +12,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 2
-        versionName "1.0.1"
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -40,7 +40,7 @@ ext {
     licenses = ['Apache-2.0']
 
     libraryDescription = 'Library that symplify using ListViews on Android'
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'sergenes'
     developerName = 'Sergey Nes'
